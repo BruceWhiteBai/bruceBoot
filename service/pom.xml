@@ -22,10 +22,14 @@
             <groupId>com.bruce</groupId>
             <artifactId>repo</artifactId>
         </dependency>
-        <!--<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>-->
+        <dependency>
+            <groupId>com.bruce</groupId>
+            <artifactId>util</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.bruce</groupId>
+            <artifactId>redis</artifactId>
+        </dependency>
 
     </dependencies>
 

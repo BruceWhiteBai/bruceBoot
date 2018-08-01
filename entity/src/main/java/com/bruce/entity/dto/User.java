@@ -5,9 +5,10 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import java.io.Serializable;
 
 @Table(name = "T_USER")
-public class User {
+public class User implements Serializable {
     @Id
     @Column(name = "USER_ID")
     private String userId;
