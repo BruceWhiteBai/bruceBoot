@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.bruce</groupId>
-    <artifactId>repo</artifactId>
+    <artifactId>util</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>repo</name>
+    <name>util</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -17,22 +17,14 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-
     <dependencies>
         <dependency>
-            <groupId>com.bruce</groupId>
-            <artifactId>entity</artifactId>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
         </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>
-        <!--<dependency>
-            <groupId>tk.mybatis</groupId>
-            <artifactId>mapper</artifactId>
-        </dependency>-->
 
     </dependencies>
+
 
 
 
