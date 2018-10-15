@@ -3,6 +3,7 @@ package com.bruce.util.snowflake;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 
+import java.util.Random;
 import java.util.concurrent.*;
 
 /**
@@ -141,33 +142,47 @@ public class SnowFlake {
     //==============================Test=============================================
     /** 测试 */
     public static void main(String[] args) {
-        SnowFlake idWorker = new SnowFlake(0, 0);
+
+
         //单线程测试
-        /*
-        for (int i = 0; i < 1000; i++) {
-            long id = idWorker.nextId();
-            System.out.println(Long.toBinaryString(id));
-            System.out.println(id);
-        }*/
-
-
-        //ExecutorService executorService = Executors.newFixedThreadPool(100);
-        ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("sf-poll-%d").build();
-
-        ExecutorService pool = new ThreadPoolExecutor(5, 200,
-                0L, TimeUnit.MILLISECONDS,
-                new LinkedBlockingQueue<Runnable>(1024), threadFactory, new ThreadPoolExecutor.AbortPolicy());
+       /* long start = System.currentTimeMillis();
+        SnowFlake idWorker = new SnowFlake(new Random().nextInt(30), new Random().nextInt(30));
         for (int i = 0; i < 10000; i++) {
+
+            long id = idWorker.nextId();
+            //System.out.println(Long.toBinaryString(id));
+            System.out.println(id);
+        }
+        long end = System.currentTimeMillis();
+        System.out.println("耗时:"+(end-start)+""+(end-start)/1000);*/
+
+
+        //多线程测试 注意参数的配置,在循环体内部,snowflake容易重复,一般将idWorker放在循环体外部，每毫秒产生4096个id
+        final SnowFlake idWorker = new SnowFlake(new Random().nextInt(30), new Random().nextInt(30));
+        ThreadFactory threadFactory = new ThreadFactoryBuilder().setNameFormat("sf-poll-%d").build();
+        long start = System.currentTimeMillis();
+        ExecutorService pool = new ThreadPoolExecutor(5, 10,
+                0L, TimeUnit.MILLISECONDS,
+                new LinkedBlockingQueue<Runnable>(10240), threadFactory, new ThreadPoolExecutor.AbortPolicy());
+        for (int i = 0; i < 10000; i++) {
+
             pool.execute(new Runnable() {
                 @Override
                 public void run() {
                     long id = idWorker.nextId();
-                    System.out.println(Long.toBinaryString(id));
-                    System.out.println(Thread.currentThread().getName()+"---"+id);
+//                    System.out.println(Long.toBinaryString(id));
+//                    System.out.println(Thread.currentThread().getName()+"---"+id);
+                    System.out.println(id);
                 }
             });
         }
+
         pool.shutdown();
+
+        if(pool.isShutdown()){
+            long end = System.currentTimeMillis();
+            System.out.println("耗时:"+(end-start)+"--"+(end-start)/1000);
+        }
 
     }
 }
