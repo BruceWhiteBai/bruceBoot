@@ -18,6 +18,8 @@ public class User implements Serializable {
     private String password;
     @Column(name = "PHONE_NUM")
     private String mobileNum;
+    @Column(name= "DELETE_FLAG")
+    private int deleteFlag;
     @Transient
     private String other; //跟数据库无关的字段使用@Transient标记或移至VO类。
 
@@ -53,4 +55,19 @@ public class User implements Serializable {
         this.mobileNum = mobileNum;
     }
 
+    public int getDeleteFlag() {
+        return deleteFlag;
+    }
+
+    public void setDeleteFlag(int deleteFlag) {
+        this.deleteFlag = deleteFlag;
+    }
+
+    public String getOther() {
+        return other;
+    }
+
+    public void setOther(String other) {
+        this.other = other;
+    }
 }

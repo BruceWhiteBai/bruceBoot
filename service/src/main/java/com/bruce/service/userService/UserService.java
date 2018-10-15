@@ -11,4 +11,9 @@ public interface UserService {
      String init();
 
      User getUserById(String id);
+
+     int deleteById(String id);
+
+     void clearUserCache();
+
 }
