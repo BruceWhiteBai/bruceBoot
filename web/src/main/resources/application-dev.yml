@@ -38,3 +38,22 @@ server:
       context-path: /dev
 
 ##-----------------------------------------------------分割线----------------------------------------------------------------##
+#actuator监控配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  server:
+    port: 10111
+    servlet:
+      context-path: /
+    ssl:
+      enabled: false
+  endpoint:
+    health:
+      show-details: always
+
+
+##-----------------------------------------------------分割线----------------------------------------------------------------##
+
