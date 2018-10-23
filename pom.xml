@@ -25,6 +25,7 @@
         <module>repo</module>
         <module>redis</module>
         <module>util</module>
+        <module>eureka-server</module>
     </modules>
 
     <properties>
