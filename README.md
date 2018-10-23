@@ -1,10 +1,12 @@
->多模块项目搭建
+>多模块项目搭建 
 ```
 1. web启动类入口目录
 2. service依赖
 3. 数据库访问使用tk下的通用mapper
-4. zk依赖
-5. 
+4. zk
+5. mongo
+6. memcache
+
 
 ```
 
@@ -15,15 +17,23 @@
 2.redis-√
 3.zk
 4.mongo
-5.kafka
-6.rocket
+6.mq [rocket,rabbit,kafka,active]
 7.elk
 8.cloud
-9.distributed transaction
+9.distributed transaction tcc cap zab
 10.guava系列
 11.多环境-√
 12.自定义参数和随机数-√
 13.命令行参数启动jar包 java -jar xxx.jar --server.par七= 8888
+14.mail
+15.schedule
+16.docker
+17.thymeleaf
+18.fastDfs 与文件上传
+19.shiro
+20.security
+21.
+22.多数据源
 
 
 ```
