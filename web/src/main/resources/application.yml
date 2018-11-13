@@ -2,3 +2,5 @@ spring:
   profiles:
     #active: dev
     active: @profiles.active@
+  application:
+    name: @pom.artifactId@
