@@ -19,6 +19,9 @@
     </parent>
 
     <modules>
+        <module>cassandra</module>
+        <module>cloud</module>
+        <module>cloud/bus</module>
         <module>web</module>
         <module>entity</module>
         <module>service</module>
@@ -26,6 +29,7 @@
         <module>redis</module>
         <module>util</module>
         <module>eureka-server</module>
+        <module>mongo</module>
     </modules>
 
     <properties>
