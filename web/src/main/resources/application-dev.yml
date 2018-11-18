@@ -64,14 +64,19 @@ info:
     param: dev
     randomValue: ${random.value}  #自定义随机数
     randomNum: ${random.int}
+
 ##-----------------------------------------------------分割线----------------------------------------------------------------##
 #cloud 配置
 
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-
-
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
+##-----------------------------------------------------分割线----------------------------------------------------------------##
+#线程池配置
+threadpool:
+    corePoolSize: 10
+    maxPoolSize: 200
+    queueCapacity: 100
 
