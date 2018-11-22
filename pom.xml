@@ -30,6 +30,8 @@
         <module>util</module>
         <module>eureka-server</module>
         <module>mongo</module>
+        <module>vue-web</module>
+        <module>thymeleaf</module>
     </modules>
 
     <properties>
