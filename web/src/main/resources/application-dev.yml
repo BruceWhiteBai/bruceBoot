@@ -6,6 +6,18 @@ spring:
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
+  mail:
+    host: smtp.qq.com
+    username: 1602094132@qq.com
+    password: wwkvfrgtofckjahb
+    default-encoding: utf-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
 
 ##-----------------------------------------------------分割线----------------------------------------------------------------##
 
@@ -80,3 +92,5 @@ threadpool:
     maxPoolSize: 200
     queueCapacity: 100
 
+##-----------------------------------------------------分割线----------------------------------------------------------------##
+#邮件配置
