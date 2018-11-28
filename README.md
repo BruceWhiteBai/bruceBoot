@@ -19,15 +19,15 @@
 4.mongo
 6.mq [rocket,rabbit,kafka,active]
 7.elk
-8.cloud
+8.cloud[bus,eureka,feign,hystrix,ribbon,sleuth,zuul]
 9.distributed transaction tcc cap zab
 10.guava系列
-11.多环境-√
-12.自定义参数和随机数-√
-13.命令行参数启动jar包 java -jar xxx.jar --server.par七= 8888
-14.mail
-15.schedule
-16.docker
+11.多环境---√
+12.自定义参数和随机数---√
+13.命令行参数启动jar包 java -jar xxx.jar --server.port= 8888 ---√
+14.mail---√
+15.schedule,定时任务,xxl-job,异步支持---√
+16.docker[docker 镜像制作和持续集成]
 17.thymeleaf
 18.fastDfs 与文件上传
 19.shiro
