@@ -110,7 +110,16 @@
                 <artifactId>lombok</artifactId>
                 <version>1.16.18</version>
             </dependency>
-
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>3.9.1</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.47</version>
+            </dependency>
 
 
         </dependencies>
@@ -132,6 +141,13 @@
             <id>test</id>
             <properties>
                 <profiles.active>test</profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <!--灰度环境-->
+            <id>uat</id>
+            <properties>
+                <profiles.active>uat</profiles.active>
             </properties>
         </profile>
         <profile>

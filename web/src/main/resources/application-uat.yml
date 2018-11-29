@@ -1,0 +1,96 @@
+spring:
+  application:
+      name: web-service
+  datasource:
+    url: jdbc:mysql://172.17.0.5:3306/test?useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  mail:
+    host: smtp.qq.com
+    username: 1602094132@qq.com
+    password: wwkvfrgtofckjahb
+    default-encoding: utf-8
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+##-----------------------------------------------------分割线----------------------------------------------------------------##
+
+
+#1.x版本使用jedis,2.x版本使用lettuce,参考地址:https://blog.csdn.net/guokezhongdeyuzhou/article/details/79789629
+  redis:
+    host: 172.17.0.3
+    password:
+    port: 6379
+    lettuce:
+      pool:
+        max-idle: 10
+        min-idle: 1
+        max-active: 10
+        max-wait: -1ms
+##-----------------------------------------------------分割线----------------------------------------------------------------##
+#日志配置
+
+logging:
+  level:
+    org.springframework.web: DEBUG,CONSOLE
+  config: classpath:logback-dev.xml
+##-----------------------------------------------------分割线----------------------------------------------------------------##
+
+#查看springboot开启了哪些配置
+debug: true
+#server配置
+server:
+  port: 8080 #配置程序端口,默认为8080
+  session-timeout: 5000 #用户会话session过期时间,以秒为单位
+  servlet:
+      context-path: /uat
+
+##-----------------------------------------------------分割线----------------------------------------------------------------##
+#actuator监控配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  server:
+    port: 10111
+    servlet:
+      context-path: /  #http://localhost:10111/actuator/configprops
+    ssl:
+      enabled: false
+  endpoint:
+    health:
+      show-details: always
+
+
+##-----------------------------------------------------分割线----------------------------------------------------------------##
+#自定义参数
+info:
+  env:
+    param: uat
+    randomValue: ${random.value}  #自定义随机数
+    randomNum: ${random.int}
+
+##-----------------------------------------------------分割线----------------------------------------------------------------##
+#cloud 配置
+
+
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
+##-----------------------------------------------------分割线----------------------------------------------------------------##
+#线程池配置
+threadpool:
+    corePoolSize: 10
+    maxPoolSize: 200
+    queueCapacity: 100
+
+##-----------------------------------------------------分割线----------------------------------------------------------------##
+#邮件配置
