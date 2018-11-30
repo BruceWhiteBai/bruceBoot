@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 public class CloudController {
 
 
-    @Autowired
+   /* @Autowired
     private DiscoveryClient client;
 
     @RequestMapping("/")
     public String init(){
         String services  = client.getServices().toString();
         return services;
-    }
+    }*/
 
 
 
