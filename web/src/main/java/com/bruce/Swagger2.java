@@ -11,6 +11,14 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/**
+* @file Swagger2.java
+* @CopyRight (C) http://www.sunlands.com/
+* @brief swagger配置,访问时注意路径问题,添加 ip:port/项目名/swagger-ui.html
+* @author bzj
+* @email baizhoujun@sunlands.com
+* @date 2018/11/30
+*/
 @Configuration
 @EnableSwagger2
 public class Swagger2 {
