@@ -1,4 +1,4 @@
-package com.bruce.rabbit;
+package com.bruce.rabbit.config;
 
 import com.rabbitmq.client.Channel;
 import org.slf4j.Logger;

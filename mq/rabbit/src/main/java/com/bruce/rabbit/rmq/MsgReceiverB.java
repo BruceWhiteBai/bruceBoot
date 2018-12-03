@@ -1,5 +1,6 @@
-package com.bruce.rabbit;
+package com.bruce.rabbit.rmq;
 
+import com.bruce.rabbit.config.RabbitConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;

@@ -1,4 +1,4 @@
-package com.bruce.rabbit;
+package com.bruce.rabbit.rmq;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

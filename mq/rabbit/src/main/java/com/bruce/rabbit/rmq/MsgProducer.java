@@ -1,5 +1,6 @@
-package com.bruce.rabbit;
+package com.bruce.rabbit.rmq;
 
+import com.bruce.rabbit.config.RabbitConfig;
 import com.rabbitmq.client.AMQP;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,6 +1,7 @@
-package com.bruce.rabbit;
+package com.bruce.rabbit.controller;
 
 
+import com.bruce.rabbit.rmq.MsgProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
