@@ -1,5 +1,6 @@
 package com.bruce.rabbit;
 
+import com.bruce.rabbit.rmq.MsgProducer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -35,10 +35,6 @@
             <scope>test</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.bruce</groupId>
-            <artifactId>util</artifactId>
-        </dependency>
         <!-- springboot支持amqp和JMS规范 这边RabbitMQ是amqp的实现 读者可以尝试使用JMS规范的ActiveMQ -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
