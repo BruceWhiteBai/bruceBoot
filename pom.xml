@@ -32,6 +32,7 @@
         <module>mongo</module>
         <module>vue-web</module>
         <module>thymeleaf</module>
+        <module>mq</module>
     </modules>
 
     <properties>
