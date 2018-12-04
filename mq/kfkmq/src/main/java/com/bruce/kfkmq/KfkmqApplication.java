@@ -1,12 +1,12 @@
-package com.bruce.kafka;
+package com.bruce.kfkmq;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class KafkaApplication {
+public class KfkmqApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(KafkaApplication.class, args);
+        SpringApplication.run(KfkmqApplication.class, args);
     }
 }
