@@ -28,7 +28,7 @@
 14.mail---√
 15.schedule,定时任务,xxl-job,异步支持---√
 16.docker[docker 镜像制作和持续集成]
-17.thymeleaf
+17.thymeleaf-√
 18.fastDfs 与文件上传
 19.shiro
 20.security

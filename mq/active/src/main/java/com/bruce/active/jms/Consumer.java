@@ -11,8 +11,14 @@ public class Consumer {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @JmsListener(destination = "test.queue")
-    public void receiveQueue(String msg){
-        logger.info("test.queue---->"+msg);
+    public void receiveQueue1(String msg){
+        logger.info("test.queue--11-->"+msg);
+
+    }
+
+    @JmsListener(destination = "test.queue")
+    public void receiveQueue2(String msg){
+        logger.info("test.queue--22-->"+msg);
 
     }
 }
