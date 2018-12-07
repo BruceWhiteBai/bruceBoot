@@ -1,13 +1,12 @@
->多模块项目搭建 
+>多模块项目搭建  
 ```
-1. web启动类入口目录
-2. service依赖
-3. 数据库访问使用tk下的通用mapper
-4. zk
-5. mongo
-6. memcache
-
-
+1.vesta ,UidGender,百度发号器,snowflake
+2.logback.xml 
+3.docker maven 多module镜像
+4.docker compose,swarn,k8s
+5.rocketmq 事务消息
+6.kafka降低延时
+7.kafka消息有序
 ```
 
 
@@ -36,7 +35,8 @@
 22.多数据源
 23.cas/jasig
 24.https
-
+25.netty
+26.websocket
 ```
 
 >参考地址
