@@ -14,9 +14,9 @@
 ```
 1.日志-√
 2.redis-√
-3.zk
+3.zk-√
 4.mongo
-6.mq [rocket,rabbit,kafka,active]
+6.mq [rocket,rabbit,kafka,active]-√
 7.elk
 8.cloud[bus,eureka,feign,hystrix,ribbon,sleuth,zuul]
 9.distributed transaction tcc cap zab
@@ -37,6 +37,10 @@
 24.https
 25.netty
 26.websocket
+27.servlet3
+28.canal
+29.flume
+30.storm/jstorm
 ```
 
 >参考地址
