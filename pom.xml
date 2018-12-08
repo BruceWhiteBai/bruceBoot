@@ -21,7 +21,14 @@
     <modules>
         <module>cassandra</module>
         <module>cloud</module>
-        <module>cloud/bus</module>
+        <!--<module>cloud/bus</module>
+        <module>cloud/eureka-server-00</module>
+        <module>cloud/eureka-server-01</module>
+        <module>cloud/feign</module>
+        <module>cloud/hystrix</module>
+        <module>cloud/ribbon</module>
+        <module>cloud/sleuth</module>
+        <module>cloud/zuul</module>-->
         <module>web</module>
         <module>entity</module>
         <module>service</module>
@@ -33,6 +40,7 @@
         <module>vue-web</module>
         <module>thymeleaf</module>
         <module>mq</module>
+        <module>zk</module>
     </modules>
 
     <properties>
