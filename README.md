@@ -26,7 +26,7 @@
 13.命令行参数启动jar包 java -jar xxx.jar --server.port= 8888 ---√
 14.mail---√
 15.schedule,定时任务,xxl-job,异步支持---√
-16.docker[docker 镜像制作和持续集成]
+16.docker[docker 镜像制作和持续集成] [docker swarn,compose,服务编排],k8s
 17.thymeleaf-√
 18.fastDfs 与文件上传
 19.shiro
@@ -40,7 +40,8 @@
 27.servlet3
 28.canal
 29.flume
-30.storm/jstorm
+30.storm/jstorm/flink
+31.
 ```
 
 >参考地址
