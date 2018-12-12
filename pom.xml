@@ -41,6 +41,9 @@
         <module>thymeleaf</module>
         <module>mq</module>
         <module>zk</module>
+        <module>websocket</module>
+        <module>vue-web</module>
+
     </modules>
 
     <properties>
