@@ -1,8 +1,12 @@
->file-beat
 
 >es
 
 >logstash
 
->kafka
+>kibana
+
+
+>filebeat
+
+>heartbeat
 
