@@ -43,7 +43,7 @@
         <module>zk</module>
         <module>websocket</module>
         <module>vue-web</module>
-
+        <module>t-io</module>
     </modules>
 
     <properties>
