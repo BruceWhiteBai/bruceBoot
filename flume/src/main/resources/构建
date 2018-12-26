@@ -1,0 +1,12 @@
+
+#安装logback-flume-appender插件
+下载地址: https://github.com/gilt/logback-flume-appender
+mvn install:install-file -Dfile=E:\flume\logback-flume-appender-0.0.7\logback-flume-appender-0.0.7\target\logback-flume-appender-0.0.7.jar -DgroupId=com.gilt.logback -DartifactId=logback-flume-appender -Dversion=0.0.7 -Dpackaging=jar
+
+
+<dependency>
+    <groupId>com.gilt.logback</groupId>
+    <artifactId>logback-flume-appender</artifactId>
+    <version>0.0.7</version>
+</dependency>
+

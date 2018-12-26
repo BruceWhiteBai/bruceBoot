@@ -31,6 +31,14 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.gilt.flume/log4j-flume-appender -->
+        <dependency>
+            <groupId>com.gilt.logback</groupId>
+            <artifactId>logback-flume-appender</artifactId>
+            <version>0.0.7</version>
+        </dependency>
+
     </dependencies>
 
 
