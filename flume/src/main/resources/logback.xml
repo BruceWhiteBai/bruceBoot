@@ -109,8 +109,9 @@
     <logger name="java.sql.PreparedStatement" level="DEBUG" />
     <logger name="com.ruidou.baoqian.mapper" level="DEBUG" />
     <!-- 开发环境下的日志配置 -->
-    <root level="INFO,DEBUG">
+    <root level="TRACE">
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="SYSTEM_FILE" />
+        <appender-ref ref="flume" />
     </root>
 </configuration>

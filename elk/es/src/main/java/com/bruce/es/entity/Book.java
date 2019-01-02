@@ -25,5 +25,8 @@ public class Book {
     @JsonProperty("type")
     String type;
 
+    @JsonProperty("bookStatus")
+    String bookStatus;
+
 
 }
