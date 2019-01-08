@@ -42,7 +42,6 @@
         <module>mq</module>
         <module>zk</module>
         <module>websocket</module>
-        <module>vue-web</module>
         <module>t-io</module>
         <module>flume</module>
     </modules>
