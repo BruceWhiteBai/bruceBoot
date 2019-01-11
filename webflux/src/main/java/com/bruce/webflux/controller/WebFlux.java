@@ -14,9 +14,9 @@ public class WebFlux {
     }
 
     //【改】返回类型为Mono<String>
-    @GetMapping("/hello")
+    @GetMapping("/hello1")
     public Mono<String> helloMono() {
         // 【改】使用Mono.just生成响应式数据
-        return Mono.just("Welcome to reactive world ~");
+        return Mono.just("Welcome to reactive  Mono world ~");
     }
 }
