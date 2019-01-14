@@ -1,20 +1,20 @@
-package com.bruce.eurekaserver00;
+package com.bruce.registry;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-@EnableDiscoveryClient
 @SpringBootApplication
-public class EurekaServer00Application {
+@EnableEurekaServer
+public class RegistryApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EurekaServer00Application.class, args);
+        SpringApplication.run(RegistryApplication.class, args);
     }
+
 
     @EnableWebSecurity
     static class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -24,3 +24,4 @@ public class EurekaServer00Application {
         }
     }
 }
+
