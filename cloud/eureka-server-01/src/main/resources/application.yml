@@ -12,6 +12,8 @@ eureka:
     service-url:
      defaultZone: http://admin:admin@localhost:8761/eureka,http://admin:admin@localhost:8762/eureka
 #     defaultZone: http://localhost:8781/eureka
+    #Eureka Serer会维护 一份只读的服务清单来返回给客户端，同时该缓存清单会每隔30秒更新 一次
+    registry-fetch-interval-seconds: 30
 spring:
   application:
     name: provider
