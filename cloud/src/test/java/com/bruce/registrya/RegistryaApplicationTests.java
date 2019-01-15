@@ -1,4 +1,4 @@
-package com.bruce.hystrix;
+package com.bruce.registrya;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,10 +7,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class HystrixApplicationTests {
+public class RegistryaApplicationTests {
 
     @Test
     public void contextLoads() {
     }
 
 }
+

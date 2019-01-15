@@ -22,16 +22,15 @@ public class HelloController {
     private EurekaDiscoveryClient eurekaDiscoveryClient;
 
     @RequestMapping("/hello")
-    public String hello(){
-        return restTemplate.getForEntity("http://PROVIDER/index",String.class).getBody();
+    public String hello() {
+        return restTemplate.getForEntity("http://PROVIDER/index", String.class).getBody();
     }
 
     @RequestMapping("/index")
-    public String index(){
+    public String index() {
         List<String> services = eurekaDiscoveryClient.getServices();
         return services.toString();
     }
-
 
 
 }

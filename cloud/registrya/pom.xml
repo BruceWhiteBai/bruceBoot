@@ -7,12 +7,11 @@
         <artifactId>boot</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.bruce</groupId>
-    <artifactId>registry</artifactId>
+    <groupId>com.rbuce</groupId>
+    <artifactId>registrya</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>registry</name>
-    <description>cloud服务注册</description>
-
+    <name>registrya</name>
+    <description>Demo project for Spring Boot</description>
 
     <dependencies>
         <dependency>

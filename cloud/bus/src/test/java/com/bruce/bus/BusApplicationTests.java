@@ -10,12 +10,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class BusApplicationTests {
 
-	@Test
-	public void contextLoads() {
-	}
+    @Test
+    public void contextLoads() {
+    }
 
-	@Test
-	public void testFlake(){
+    @Test
+    public void testFlake() {
         //SnowFlake snowFlake = new SnowFlake();
-	}
+    }
 }

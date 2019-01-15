@@ -21,9 +21,9 @@ public class HelloController {
     private EurekaInstanceConfig eurekaInstanceConfig;
 
     @RequestMapping("/index")
-    public String index(){
+    public String index() {
         List<String> services = eurekaDiscoveryClient.getServices();
-        return services.toString().concat(" server-info"+eurekaInstanceConfig.getInstanceId()+"---"+ eurekaInstanceConfig.getHostName(false));
+        return services.toString().concat(" server-info" + eurekaInstanceConfig.getInstanceId() + "---" + eurekaInstanceConfig.getHostName(false));
     }
 
     @GetMapping(path = "/current")

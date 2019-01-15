@@ -1,5 +1,5 @@
 server:
-  port: 8761
+  port: 8762
 
 eureka:
   instance:
@@ -12,8 +12,8 @@ eureka:
     fetchRegistry: false
     service-url:
     # 安全校验
-#      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka
-      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@registrya:8762/eureka
+      #defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:${server.port}/eureka,http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@registry:8761/eureka
 #       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 #       defaultZone: http://localhost:8782/eureka,http://localhost:8781/eureka
   server:
