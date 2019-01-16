@@ -1,4 +1,4 @@
-package com.rbuce.registrya;
+package com.bruce.registrya;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
