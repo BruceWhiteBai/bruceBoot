@@ -12,6 +12,7 @@ public class HelloServiceImpl implements IHelloService {
     @Autowired
     RestTemplate restTemplate;
 
+    //xxx  Hystrix 默认超时时间为 2000 毫秒 超时异常时触发调用回调方法
     @HystrixCommand(fallbackMethod = "helloFallBack")
     @Override
     public String helloService() {

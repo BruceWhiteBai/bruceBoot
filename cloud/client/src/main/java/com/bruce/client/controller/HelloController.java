@@ -4,6 +4,7 @@ package com.bruce.client.controller;
 import com.bruce.client.service.IHelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EurekaDiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,10 +26,15 @@ public class HelloController {
     @Autowired
     private EurekaDiscoveryClient eurekaDiscoveryClient;
 
+
     @RequestMapping("/hello")
     public String hello() {
 //        return restTemplate.getForEntity("http://PROVIDER/index", String.class).getBody();
         return helloService.helloService();
+    }
+    @RequestMapping("/hello1")
+    public String hello1() {
+        return restTemplate.getForEntity("http://PROVIDER/index", String.class).getBody();
     }
 
     @RequestMapping("/index")
