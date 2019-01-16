@@ -1,6 +1,7 @@
 package com.bruce.client.controller;
 
 
+import com.bruce.client.service.IHelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.netflix.eureka.EurekaDiscoveryClient;
@@ -19,11 +20,15 @@ public class HelloController {
     RestTemplate restTemplate;
 
     @Autowired
+    IHelloService helloService;
+
+    @Autowired
     private EurekaDiscoveryClient eurekaDiscoveryClient;
 
     @RequestMapping("/hello")
     public String hello() {
-        return restTemplate.getForEntity("http://PROVIDER/index", String.class).getBody();
+//        return restTemplate.getForEntity("http://PROVIDER/index", String.class).getBody();
+        return helloService.helloService();
     }
 
     @RequestMapping("/index")
