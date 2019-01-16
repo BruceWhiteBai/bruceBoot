@@ -32,5 +32,6 @@ public class HelloController {
         return services.toString();
     }
 
+    //todo get请求 post请求 put请求 delete请求
 
 }
