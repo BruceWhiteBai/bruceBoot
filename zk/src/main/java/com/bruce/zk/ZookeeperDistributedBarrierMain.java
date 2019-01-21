@@ -12,10 +12,10 @@ import java.util.function.Consumer;
 
 /**
 * @file ZookeeperDistributedBarrierMain.java
-* @CopyRight (C) http://www.sunlands.com/
+* @CopyRight (C)
 * @brief
 * @author bzj
-* @email baizhoujun@sunlands.com
+* @email
 * @date 2018/12/6
 */
 

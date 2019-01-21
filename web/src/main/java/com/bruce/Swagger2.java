@@ -13,10 +13,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
 * @file Swagger2.java
-* @CopyRight (C) http://www.sunlands.com/
+* @CopyRight (C)
 * @brief swagger配置,访问时注意路径问题,添加 ip:port/项目名/swagger-ui.html
 * @author bzj
-* @email baizhoujun@sunlands.com
+* @email
 * @date 2018/11/30
 */
 @Configuration
