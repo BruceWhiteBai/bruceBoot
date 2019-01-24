@@ -3,6 +3,7 @@ package com.bruce.client.controller;
 
 import com.bruce.client.service.IHelloService;
 import com.bruce.client.service.impl.HelloServiceImplExtend;
+import com.bruce.entity.dto.User;
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommand.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +11,14 @@ import org.springframework.cloud.netflix.eureka.EurekaDiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
 import rx.Observable;
 
+import java.net.URI;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.Future;
 
 @RestController
@@ -33,9 +39,44 @@ public class HelloController {
 //        return restTemplate.getForEntity("http://PROVIDER/index", String.class).getBody();
         return helloService.helloService();
     }
+
     @RequestMapping("/hello1")
     public String hello1() {
         return restTemplate.getForEntity("http://PROVIDER/index", String.class).getBody();
+    }
+
+    /**
+     * 使用 UriComponents
+     * 使用 getObject
+     * @return
+     */
+    @RequestMapping("/hello0")
+    public String hello0() {
+        UriComponents uriComponents = UriComponentsBuilder.fromUriString("http://PROVIDER/index").build().encode();
+        URI uri = uriComponents.toUri();
+        return restTemplate.getForObject(uri, String.class);
+    }
+
+    @RequestMapping("/hello2")
+    public User hello2() {
+        return restTemplate.getForEntity("http://PROVIDER/index2", User.class).getBody();
+    }
+
+    @RequestMapping("/hello3")
+    public User hello3() {
+        User user = new User();
+        user.setUserId("1");
+        user.setMobileNum("15313723513");
+        user.setUsername("bruce");
+        user.setPassword("asdaf");
+        user.setOther("qwer");
+        user.setDeleteFlag(1);
+        Map<String,String> param = new HashMap<>();
+                param.put("username","12312312");
+        param.put("userId","1");
+//        return restTemplate.postForEntity("http://PROVIDER/index3", user,User.class).getBody();
+//        return restTemplate.postForObject("http://PROVIDER/index3", param,User.class);
+        return restTemplate.postForObject("http://PROVIDER/index3?other={other}", user,User.class,"test");
     }
 
     @RequestMapping("/index")

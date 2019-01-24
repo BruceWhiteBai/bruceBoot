@@ -28,3 +28,6 @@ spring:
     user:
       name: admin
       password: admin
+#  cloud:
+#      compatibility-verifier:
+#        enabled: false

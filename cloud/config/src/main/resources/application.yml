@@ -1,0 +1,17 @@
+server:
+  port: 8888
+
+eureka:
+  instance:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8761/eureka,http://admin:admin@localhost:8762/eureka
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/BruceWhiteBai/bruceBoot
+          search-paths: cloud/config-repo
+
