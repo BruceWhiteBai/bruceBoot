@@ -1,6 +1,7 @@
 package com.bruce.client.controller;
 
 
+import com.bruce.client.service.IFeignHelloService;
 import com.bruce.client.service.IHelloService;
 import com.bruce.client.service.impl.HelloServiceImplExtend;
 import com.bruce.entity.dto.User;
@@ -29,6 +30,9 @@ public class HelloController {
 
     @Autowired
     IHelloService helloService;
+
+    @Autowired
+    IFeignHelloService iFeignHelloService;
 
     @Autowired
     private EurekaDiscoveryClient eurekaDiscoveryClient;
@@ -101,4 +105,50 @@ public class HelloController {
         Future<String> observable2 = new HelloServiceImplExtend(restTemplate).queue();
         return services.toString();
     }
+
+    @RequestMapping("/hello4")
+    public String hello4() {
+        return iFeignHelloService.index();
+    }
+
+    @RequestMapping("/hello5")
+    public String hello5() {
+        return iFeignHelloService.feignl("feign--hello5");
+    }
+
+
+    @RequestMapping("/hello6")
+    public User hello6() {
+        return iFeignHelloService.feign2("feign--hello6","9527");
+    }
+
+
+    @RequestMapping("/hello7")
+    public String hello7() {
+        User user = new User();
+        user.setUserId("1");
+        user.setUsername("bruce");
+        return iFeignHelloService.feign3(user);
+    }
+
+    @RequestMapping("/hello8")
+    public String hello8() {
+        return iFeignHelloService.feign4("feign--hello5");
+    }
+
+
+    @RequestMapping("/hello9")
+    public User hello9() {
+        return iFeignHelloService.feign5("feign--hello6","9527");
+    }
+
+
+    @RequestMapping("/hello10")
+    public String hello10() {
+        User user = new User();
+        user.setUserId("1");
+        user.setUsername("bruce");
+        return iFeignHelloService.feign6(user);
+    }
 }
+

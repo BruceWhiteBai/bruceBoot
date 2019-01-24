@@ -61,4 +61,16 @@ public class HelloController {
     }
 
 
+    @RequestMapping(value= "/feignl", method= RequestMethod.GET)
+    public String feignl(@RequestParam String name) {
+        return "Hello " + name;
+    }
+    @RequestMapping(value= "/feign2", method= RequestMethod.GET)
+    public User feign2(@RequestHeader String name, @RequestHeader String userId) {
+        return new User(userId,name,"","",0,"");
+    }
+    @RequestMapping(value= "/feign3", method = RequestMethod.POST)
+    public String feign3(@RequestBody User user) {
+        return "Hello " + user.getUsername() + ", " + user.getUserId();
+    }
 }
