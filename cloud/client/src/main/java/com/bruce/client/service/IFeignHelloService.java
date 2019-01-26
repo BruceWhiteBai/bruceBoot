@@ -1,12 +1,13 @@
 package com.bruce.client.service;
 
+import com.bruce.client.service.impl.FeignHelloServiceFallBack;
 import com.bruce.entity.dto.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
 
 @Component
-@FeignClient("provider")
+@FeignClient(value="provider",fallbackFactory = FeignHelloServiceFallBack.class)
 public interface IFeignHelloService  extends IFeignExtends{
 
     @RequestMapping("/index")

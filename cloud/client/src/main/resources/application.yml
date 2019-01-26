@@ -26,8 +26,17 @@ feign:
     config:
       feignName:
         connectTimeout: 5000
-        readTimeout: 5000
+        readTimeout: 2000
         loggerLevel: full
+  #feign hystrix 开关
+  hystrix:
+    enabled: true
+  #开启请求和响应压缩
+  compression:
+    request:
+      enabled: true
+    response:
+      enabled: true
 #        errorDecoder: com.example.SimpleErrorDecoder
 #        retryer: com.example.SimpleRetryer
 #        requestInterceptors:
@@ -37,3 +46,10 @@ feign:
 #        encoder: com.example.SimpleEncoder
 #        decoder: com.example.SimpleDecoder
 #        contract: com.example.SimpleContract
+#hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 3000
+
+provider :
+  ribbon:
+    ConnectTimeout: 3000
+    ReadTimeout: 3000
+
