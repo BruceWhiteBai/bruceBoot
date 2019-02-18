@@ -67,7 +67,7 @@ public class BookController {
     public List<Book> searchCity(@PathVariable Integer page, @PathVariable Integer size, @PathVariable String q) {
 
         // 分页参数
-        Pageable pageable = new PageRequest(page, size);
+        Pageable pageable = new PageRequest(page, size,Sort.Direction.DESC,"");
 
         // 分数，并自动按分排序
         /*FunctionScoreQueryBuilder functionScoreQueryBuilder = QueryBuilders.functionScoreQuery()
