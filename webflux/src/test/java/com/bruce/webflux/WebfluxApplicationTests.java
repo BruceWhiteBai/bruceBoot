@@ -29,5 +29,29 @@ public class WebfluxApplicationTests {
         }
     }
 
+    @Test
+    public void test1(){
+        B b = new B();
+    }
 }
+
+class A{
+    static{
+        System.out.println("----S-A---");
+    }
+    public A() {
+        System.out.println("-----A-----");
+
+    }
+}
+
+class B extends A{
+    static{
+        System.out.println("----S-B---");
+    }
+    public B() {
+        System.out.println("----B---");
+    }
+}
+
 
