@@ -13,5 +13,21 @@ public class WebfluxApplicationTests {
     public void contextLoads() {
     }
 
+
+    @Test
+    public void test() {
+        func(2,0);
+    }
+
+    public void func(int r,int c){
+        r--;
+        c++;
+        if(r>0 && c<3){
+            func(r,c);
+        } else {
+            System.out.println("r = [" + r + "], c = [" + c + "]");
+        }
+    }
+
 }
 
