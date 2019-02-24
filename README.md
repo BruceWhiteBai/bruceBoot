@@ -19,7 +19,7 @@
 6.mq [rocket,rabbit,kafka,active]-√
 7.elk
 8.cloud[bus,eureka,feign,hystrix,ribbon,sleuth,zuul]
-9.distributed transaction tcc cap zab
+9.distributed transaction tcc cap zab，最终一致性,最大努力通知型
 10.guava系列
 11.多环境---√
 12.自定义参数和随机数---√
@@ -46,6 +46,7 @@
 33.pdf,excel,word,html,xml等文件
 34.mycat,sharding-jdbc,dbsplit分库分表
 35.asm字节码反编译工具
+35.session与分布式session
 ```
 
 >参考地址
