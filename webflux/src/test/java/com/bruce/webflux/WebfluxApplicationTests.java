@@ -5,6 +5,8 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.lang.invoke.MethodHandles;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class WebfluxApplicationTests {
@@ -51,6 +53,10 @@ class B extends A{
     }
     public B() {
         System.out.println("----B---");
+    }
+
+    public static MethodHandles.Lookup lookup(){
+        return MethodHandles.lookup();
     }
 }
 
