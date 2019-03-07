@@ -22,6 +22,14 @@ public class LogController {
     public String getBookById(@PathVariable String id) {
         logger.info("测试初始一些日志吧！--info");
         logger.debug("测试初始一些日志吧！--debug");
+        try {
+            System.out.println("id = [" + 1/0 + "]");
+        } catch (Exception e){
+            logger.error("msg{}",e.getLocalizedMessage());
+            e.getMessage();
+            logger.debug("测试初始一些日志吧！--debug");
+
+        }
         return "logstash test " + id;
     }
 
