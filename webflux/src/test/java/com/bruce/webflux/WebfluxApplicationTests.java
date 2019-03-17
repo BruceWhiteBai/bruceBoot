@@ -7,6 +7,8 @@ import net.sourceforge.pinyin4j.format.HanyuPinyinToneType;
 import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -20,6 +22,8 @@ import java.util.List;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class WebfluxApplicationTests {
+
+    private static final Logger logger = LoggerFactory.getLogger(WebfluxApplicationTests.class);
 
     @Test
     public void contextLoads() {
@@ -96,6 +100,46 @@ public class WebfluxApplicationTests {
             e.printStackTrace();
         }
         return pinyin.substring(0, 1);
+    }
+
+
+    @Test
+    public void testInter() {
+        Integer a = new Integer(200);
+        Integer b = new Integer(200);
+        Integer c = 200;
+        Integer e = 200;
+        int d = 200;
+        Object o=200;
+        System.out.println("基本类型和数字常量    ==判断"+(o==c));
+        System.out.println("基本类型和数字常量    equal判断"+c.equals(o));
+        System.out.println("两个new出来的对象    ==判断" + (a == b));
+        System.out.println("两个new出来的对象    equal判断" + a.equals(b));
+        System.out.println("new出的对象和用int赋值的Integer   ==判断" + (a == c));
+        System.out.println("new出的对象和用int赋值的Integer   equal判断" + (a.equals(c)));
+        System.out.println("两个用int赋值的Integer    ==判断" + (c == e));
+        System.out.println("两个用int赋值的Integer    equal判断" + (c.equals(e)));
+        System.out.println("基本类型和new出的对象   ==判断" + (d == a));
+        System.out.println("基本类型和new出的对象   equal判断" + (a.equals(d)));
+        System.out.println("基本类型和自动装箱的对象   ==判断" + (d == c));
+        System.out.println("基本类型和自动装箱的对象   equal判断" + (c.equals(d)));
+
+        try{
+            System.out.println(1/0);
+        }catch(Exception exception){
+            logger.error("asdf ", exception);
+            logger.error("------------------------------ ");
+            logger.error("123---",exception);
+
+            logger.error("------------------------------ ");
+            logger.error("456---",exception);
+
+            logger.error("------------------------------ ");
+            logger.error("789---",exception);
+
+            logger.error("------------------------------ ");
+            logger.error("456---"+exception);
+        }
     }
 }
 
