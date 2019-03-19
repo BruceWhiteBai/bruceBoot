@@ -1,16 +1,21 @@
 spring:
   application:
     name: config-server #对应配置文件规则中的{application} 部分。
+  security:
+    user:
+      name: admin
+      password:  '{cipher}78c2c6ceb5dd96e3475b493a8acf8aeb05aafb35168c31f3a3888d3c23ee413a'
   cloud:
     config:
       server:
         git:
           uri: https://github.com/BruceWhiteBai/cloudconfig.git
-          username: BruceWhiteBai
-          password: JohnCena3463125
+          username: BruceWhiteBai #git 仓库设置为private 时需要配置用户名密码 使用 curl  http://localhost:8888/encrypt -d 加密
+          password: '{cipher}ff7c8aa7b281639a77d32b475e784b55956aee2ffbb0276a7f6521375a48069d'
           searchPaths: config-repo
+#        health: #todo 添加健康监测
+#          repositories:
       label: config_1 #对应配置文件规则中的{label} 部分。
       profile: dev  #对应配置文件规则中的{profile} 部分。
-
 server:
   port: 8888
