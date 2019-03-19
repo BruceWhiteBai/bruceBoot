@@ -1,11 +1,13 @@
 server:
-  port: 8888
+  port: 8080
 
 eureka:
   instance:
   client:
-    service-url:
-      defaultZone: http://admin:admin@localhost:8761/eureka,http://admin:admin@localhost:8762/eureka
+    register-with-eureka: false
+    fetch-registry: false
+#    service-url:
+#      defaultZone: http://admin:admin@localhost:8761/eureka,http://admin:admin@localhost:8762/eureka
 
 spring:
   cloud:
@@ -13,5 +15,9 @@ spring:
       server:
         git:
           uri: https://github.com/BruceWhiteBai/bruceBoot
+#          skipSslValidation: true
           search-paths: cloud/config-repo
+          username: BruceWhiteBai
+          password: JohnCena3463125
+      label: master
 
