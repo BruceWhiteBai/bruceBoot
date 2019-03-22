@@ -17,11 +17,27 @@ spring:
 #          repositories:
       label: config_1 #对应配置文件规则中的{label} 部分。
       profile: dev  #对应配置文件规则中的{profile} 部分。
-  rabbitmq:
-    host: 192.168.99.100
-    port: 5672
-    username: springcloud
-    password: 123456
+    stream:
+      kafka:
+        binder:
+          brokers:  localhost:9092
+          zk-nodes: 192.168.99.100:2181
+#<!--bus config -->
+#  rabbitmq:
+#    host: 192.168.99.100
+#    port: 5672
+#    username: springcloud
+#    password: 123456
+
+#Kafka的服务端列表，默认localhost
+#spring.cloud.stream.kafka.binder.brokers=localhost:9092
+#Kafka服务端的默认端口，当brokers属性中没有配置端口信息时，就会使用这个默认端口，默认9092
+#spring.cloud.stream.kafka.binder.defaultBrokerPort=9092
+#Kafka服务端连接的ZooKeeper节点列表，默认localhost
+#spring.cloud.stream.kafka.binder.zkNodes=192.168.99.100:2181
+#ZooKeeper节点的默认端口，当zkNodes属性中没有配置端口信息时，就会使用这个默认端口，默认2181
+#spring.cloud.stream.kafka.binder.defaultZkPort=2181
+
 
 
 server:
