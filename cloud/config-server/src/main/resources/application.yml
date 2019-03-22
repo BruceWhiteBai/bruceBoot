@@ -17,6 +17,13 @@ spring:
 #          repositories:
       label: config_1 #对应配置文件规则中的{label} 部分。
       profile: dev  #对应配置文件规则中的{profile} 部分。
+  rabbitmq:
+    host: 192.168.99.100
+    port: 5672
+    username: springcloud
+    password: 123456
+
+
 server:
   port: 8888
 
