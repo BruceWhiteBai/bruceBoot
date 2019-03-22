@@ -19,4 +19,11 @@ public class RabbitController {
             msgProducer.sendMsg("asdf"+i);
         }
     }
+
+    @RequestMapping("/topic")
+    public void topic(){
+        for (int i = 0; i < 50 ; i++) {
+            msgProducer.sendTopicMsg("asdf"+i);
+        }
+    }
 }
