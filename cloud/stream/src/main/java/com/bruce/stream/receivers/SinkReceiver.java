@@ -13,6 +13,8 @@ import org.springframework.cloud.stream.messaging.Sink;
  * Stream中默认实现的对输入消息通道绑定的定义
  */
 @EnableBinding(SinkSender.class)
+//@EnableBinding(value={SinkSender.class,Sink.class})
+//@EnableBinding(value={Sink.class})
 public class SinkReceiver {
 
     private static Logger logger = LoggerFactory.getLogger(SinkReceiver.class);

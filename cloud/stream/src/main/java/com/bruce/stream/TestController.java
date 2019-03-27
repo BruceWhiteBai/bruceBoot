@@ -19,13 +19,23 @@ public class TestController {
     private SinkSender testTopic;
 
     @Autowired
+    @Qualifier(SinkSender.OUTPUT)
+    private MessageChannel testTopic1;
+
+    @Autowired
     @Qualifier(Sink.INPUT)
     MessageChannel source;
 
+
     @GetMapping("/sendMessage")
     public String messageWithMQ(@RequestParam String message) {
+
         testTopic.outPut().send(MessageBuilder.withPayload(message).build());
+
         source.send(org.springframework.messaging.support.MessageBuilder.withPayload("from source ").build());
+
+        testTopic1.send(MessageBuilder.withPayload("from  "+ SinkSender.OUTPUT).build());
+
         return "ok";
     }
 
