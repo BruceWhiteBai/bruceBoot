@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.eureka.EurekaDiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.security.Principal;
 import java.util.List;
 import java.util.Random;
@@ -72,5 +73,12 @@ public class HelloController {
     @RequestMapping(value= "/feign3", method = RequestMethod.POST)
     public String feign3(@RequestBody User user) {
         return "Hello " + user.getUsername() + ", " + user.getUserId();
+    }
+
+    @RequestMapping(value= "/trace-1", method= RequestMethod.GET)
+    public String trace1(String str, HttpServletRequest request) {
+        logger.info("===call trace-1===");
+        logger.info("traceId={},spanId={},",request.getHeader("X-B3-TraceId"),request.getHeader("X-B3-SpanId"));
+        return "hello trace " + str;
     }
 }

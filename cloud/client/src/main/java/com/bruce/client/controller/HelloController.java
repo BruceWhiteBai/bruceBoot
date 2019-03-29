@@ -5,8 +5,8 @@ import com.bruce.client.service.IFeignHelloService;
 import com.bruce.client.service.IHelloService;
 import com.bruce.client.service.impl.HelloServiceImplExtend;
 import com.bruce.entity.dto.User;
-import com.netflix.hystrix.HystrixCommand;
-import com.netflix.hystrix.HystrixCommand.Setter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.eureka.EurekaDiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +24,8 @@ import java.util.concurrent.Future;
 
 @RestController
 public class HelloController {
+
+    private static final Logger logger = LoggerFactory.getLogger(HelloController.class);
 
     @Autowired
     RestTemplate restTemplate;
@@ -52,6 +54,7 @@ public class HelloController {
     /**
      * 使用 UriComponents
      * 使用 getObject
+     *
      * @return
      */
     @RequestMapping("/hello0")
@@ -75,12 +78,12 @@ public class HelloController {
         user.setPassword("asdaf");
         user.setOther("qwer");
         user.setDeleteFlag(1);
-        Map<String,String> param = new HashMap<>();
-                param.put("username","12312312");
-        param.put("userId","1");
+        Map<String, String> param = new HashMap<>();
+        param.put("username", "12312312");
+        param.put("userId", "1");
 //        return restTemplate.postForEntity("http://PROVIDER/index3", user,User.class).getBody();
 //        return restTemplate.postForObject("http://PROVIDER/index3", param,User.class);
-        return restTemplate.postForObject("http://PROVIDER/index3?other={other}", user,User.class,"test");
+        return restTemplate.postForObject("http://PROVIDER/index3?other={other}", user, User.class, "test");
     }
 
     @RequestMapping("/index")
@@ -119,7 +122,7 @@ public class HelloController {
 
     @RequestMapping("/hello6")
     public User hello6() {
-        return iFeignHelloService.feign2("feign--hello6","9527");
+        return iFeignHelloService.feign2("feign--hello6", "9527");
     }
 
 
@@ -139,7 +142,7 @@ public class HelloController {
 
     @RequestMapping("/hello9")
     public User hello9() {
-        return iFeignHelloService.feign5("feign--hello6","9527");
+        return iFeignHelloService.feign5("feign--hello6", "9527");
     }
 
 
@@ -149,6 +152,12 @@ public class HelloController {
         user.setUserId("1");
         user.setUsername("bruce");
         return iFeignHelloService.feign6(user);
+    }
+
+    @RequestMapping("/trace-1")
+    public String trace1() {
+        logger.info("===call trace-1===");
+        return restTemplate.getForEntity("http://PROVIDER/trace-1?str={str}", String.class,"test").getBody();
     }
 }
 
