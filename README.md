@@ -13,18 +13,18 @@
 >任务列表
 ```
 1.日志-√
-2.redis-√
+2.redis-√  https://www.jianshu.com/p/7bf5dc61ca06
 3.zk-√
-4.mongo
+4.mongo  
 6.mq [rocket,rabbit,kafka,active]-√
-7.elk
-8.cloud[bus,eureka,feign,hystrix,ribbon,sleuth,zuul]
+7.elk [filebeat logstash es kibana]-√
+8.cloud[bus,eureka,feign,hystrix,ribbon,sleuth,zuul] -√
 9.distributed transaction tcc cap zab，最终一致性,最大努力通知型
-10.guava系列
+10.guava系列 
 11.多环境---√
 12.自定义参数和随机数---√
 13.命令行参数启动jar包 java -jar xxx.jar --server.port= 8888 ---√
-14.mail---√
+14.mail ---√
 15.schedule,定时任务,xxl-job,异步支持---√
 16.docker[docker 镜像制作和持续集成] [swarn,compose,harbor,rancher Kubernetes]
 17.thymeleaf-√
@@ -38,16 +38,20 @@
 25.netty
 26.websocket
 27.servlet3
-28.canal
+28.canal datax
 29.flume
 30.storm/jstorm/flink
 31.kong--api网关
-32.yapi接口管理
-33.pdf,excel,word,html,xml等文件
+32.yapi接口管理 ---√ 阿里云版搭建完成,官网未完成 todo 
+33.pdf,excel,word,html,xml等文件操作
 34.mycat,sharding-jdbc,dbsplit分库分表
 35.asm字节码反编译工具
 35.session与分布式session
 36.Nacos 微服务[https://mp.weixin.qq.com/s/l52giRP5UCj1DHPriLecFg]
+37.rpc[dubbo,thrift,grpc,rmi,ice,springcloud] ---√
+37.apollo配置中心 kubernetes docker namespace等知识点
+39.Consul
+40.flywaydb
 ```
 
 >参考地址
