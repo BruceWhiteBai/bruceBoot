@@ -1,0 +1,20 @@
+server:
+  port: 8899
+fdfs:
+# 连接Tracker服务器超时时间
+  connect-timeout: 10000
+# storage服务器响应的超时时间
+  so-timeout: 3000
+#  trakcer服务器的数量
+  tracker-list:
+   - 192.168.99.100:22122
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/test
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+# 上传文件的最大的大小
+  http:
+    multipart:
+      max-file-size: 10000000

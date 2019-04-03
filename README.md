@@ -28,7 +28,7 @@
 15.schedule,定时任务,xxl-job,异步支持---√
 16.docker[docker 镜像制作和持续集成] [swarn,compose,harbor,rancher Kubernetes]
 17.thymeleaf-√
-18.fastDfs 与文件上传
+18.fastDfs 与文件上传 -√ [概念和原理相关笔记完善]
 19.shiro
 20.security
 21.cassandra
@@ -36,17 +36,17 @@
 23.cas/jasig
 24.https
 25.netty
-26.websocket
+26.websocket 
 27.servlet3
 28.canal datax
 29.flume
 30.storm/jstorm/flink
 31.kong--api网关
 32.yapi接口管理 ---√ 阿里云版搭建完成,官网未完成 todo 
-33.pdf,excel,word,html,xml等文件操作
+33.pdf,excel,word,html,xml 等文件操作
 34.mycat,sharding-jdbc,dbsplit分库分表
 35.asm字节码反编译工具
-35.session与分布式session
+35.session与分布式session 
 36.Nacos 微服务[https://mp.weixin.qq.com/s/l52giRP5UCj1DHPriLecFg]
 37.rpc[dubbo,thrift,grpc,rmi,ice,springcloud] ---√
 37.apollo配置中心 kubernetes docker namespace等知识点
