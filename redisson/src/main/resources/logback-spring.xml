@@ -6,6 +6,9 @@
 	<!--<property name="log.fileName" value="redisson.log" />-->
 	<!--<property name="log.base" value="../logs/redisson" />-->
 	<property name="LOG_FILE"  value="redisson.log" />
+	<!--TODO 方式1 配置路径-->
+	<!--<property name="log.base" value="${LOG_PATH:-.}"/>-->
+	<!--TODO 方式2 -->
 
 	<if condition='isDefined("catalina.home")'>
 		<then>
@@ -14,6 +17,7 @@
 		<else>
 			<property name="log.base" value="./logs/redisson"/>
 		</else>
+
 	</if>
 
 
