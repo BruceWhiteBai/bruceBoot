@@ -19,7 +19,7 @@
 6.mq [rocket,rabbit,kafka,active]-√
 7.elk [filebeat logstash es kibana]-√
 8.cloud[bus,eureka,feign,hystrix,ribbon,sleuth,zuul] -√
-9.分布式事务 tcc cap zab，最终一致性,最大努力通知型
+9.事务与 分布式事务 tcc cap zab，最终一致性,最大努力通知型
 10.guava系列 
 11.多环境---√
 12.自定义参数和随机数---√
@@ -29,15 +29,15 @@
 16.docker[docker 镜像制作和持续集成] [swarn,compose,harbor,rancher Kubernetes]
 17.thymeleaf-√
 18.fastDfs 与文件上传 -√ [概念和原理相关笔记完善] [linux 集群 和 Nginx集成搭建 ]
-19.shiro 
+19.shiro  
 20.security
 21.cassandra
-22.多数据源
+22.多数据源  [https://github.com/caicahoqi/ChaoqiIsPrivateLibrary]
 23.cas/jasig
 24.https [证书购买,安装,重定向] [原理]
-25.netty 
+25.netty  
 26.websocket 
-27.servlet3
+27.servlet3 
 28.canal datax
 29.flume [flume dfs hdfs]
 30.storm/jstorm/flink
@@ -50,7 +50,7 @@
 36.Nacos 微服务[https://mp.weixin.qq.com/s/l52giRP5UCj1DHPriLecFg]
 37.rpc[dubbo,thrift,grpc,rmi,ice,springcloud] ---√
 37.apollo配置中心 kubernetes docker namespace等知识点综合实战
-39.Consul eureka
+39.Consul eureka zk  [cap] 
 40.flywaydb 数据库版本控制
 ```
 

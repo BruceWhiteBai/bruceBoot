@@ -93,11 +93,11 @@
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <!--添加通用Mapper依赖 -->
-            <dependency>
+            <!--<dependency>
                 <groupId>tk.mybatis</groupId>
                 <artifactId>mapper</artifactId>
                 <version>3.3.2</version>
-            </dependency>
+            </dependency>-->
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
