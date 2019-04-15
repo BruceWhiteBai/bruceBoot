@@ -1,4 +1,4 @@
-package com.bruce.multipledatasource.config;
+package com.bruce.multipledatasource.config.datasource;
 
 import java.util.ArrayList;
 import java.util.List;

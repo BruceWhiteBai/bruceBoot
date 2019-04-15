@@ -1,4 +1,4 @@
-package com.bruce.multipledatasource.config;
+package com.bruce.multipledatasource.config.datasource;
 
 import org.springframework.jdbc.datasource.lookup.AbstractRoutingDataSource;
 

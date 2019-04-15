@@ -1,4 +1,4 @@
-package com.bruce.multipledatasource.config;
+package com.bruce.multipledatasource.config.datasource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -61,7 +61,7 @@ public class DynamicDataSourceRegister implements ImportBeanDefinitionRegistrar,
 
     @Override
     public void registerBeanDefinitions(AnnotationMetadata annotationMetadata, BeanDefinitionRegistry beanDefinitionRegistry) {
-        Map<Object, Object> targetDataSources = new HashMap<Object, Object>();
+        Map<Object, Object> targetDataSources = new HashMap<>();
         //添加默认数据源
         targetDataSources.put("dataSource", this.defaultDataSource);
         DynamicDataSourceContextHolder.dataSourceIds.add("dataSource");

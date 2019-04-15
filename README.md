@@ -31,8 +31,8 @@
 18.fastDfs 与文件上传 -√ [概念和原理相关笔记完善] [linux 集群 和 Nginx集成搭建 ]
 19.shiro  
 20.security
-21.cassandra
-22.多数据源  [https://github.com/caicahoqi/ChaoqiIsPrivateLibrary]
+21.cassandra + python
+22.多数据源  [https://github.com/caicahoqi/ChaoqiIsPrivateLibrary] 以及跨数据源的事务
 23.cas/jasig
 24.https [证书购买,安装,重定向] [原理]
 25.netty  

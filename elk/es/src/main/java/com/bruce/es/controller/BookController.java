@@ -2,10 +2,10 @@ package com.bruce.es.controller;
 
 import com.bruce.es.dao.BookDao;
 import com.bruce.es.entity.Book;
+import org.elasticsearch.action.update.UpdateRequestBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.index.query.QueryStringQueryBuilder;
 import org.elasticsearch.index.query.functionscore.FunctionScoreQueryBuilder;
-import org.elasticsearch.index.query.functionscore.ScoreFunctionBuilders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Random;
 
 
 @RestController
@@ -30,6 +29,7 @@ public class BookController {
 
     /**
      * 1、查  id
+     *
      * @param id
      * @return
      */
@@ -40,6 +40,7 @@ public class BookController {
 
     /**
      * 2、查  ++:全文检索（根据整个实体的所有属性，可能结果为0个）
+     *
      * @param q
      * @return
      */
@@ -57,17 +58,17 @@ public class BookController {
 
     /**
      * 3、查   +++：分页、分数、分域（结果一个也不少）
+     *
      * @param page
      * @param size
      * @param q
-     * @return
      * @return
      */
     @GetMapping("/{page}/{size}/{q}")
     public List<Book> searchCity(@PathVariable Integer page, @PathVariable Integer size, @PathVariable String q) {
 
         // 分页参数
-        Pageable pageable = new PageRequest(page, size,Sort.Direction.DESC,"");
+        Pageable pageable = new PageRequest(page, size, Sort.Direction.DESC, "");
 
         // 分数，并自动按分排序
         /*FunctionScoreQueryBuilder functionScoreQueryBuilder = QueryBuilders.functionScoreQuery()
@@ -80,8 +81,7 @@ public class BookController {
 
         FunctionScoreQueryBuilder functionScoreQueryBuilder = QueryBuilders.functionScoreQuery(
                 QueryBuilders.boolQuery().should(QueryBuilders.matchQuery("name", q))
-                        );
-
+        );
 
 
         // 分数、分页
@@ -98,8 +98,8 @@ public class BookController {
 
         // 分页参数
         //Pageable pageable = new PageRequest(page, size);
-        Sort sort = new Sort(Sort.Direction.DESC,"name");
-        PageRequest pageRequest = PageRequest.of(page,size,sort);
+        Sort sort = new Sort(Sort.Direction.DESC, "name");
+        PageRequest pageRequest = PageRequest.of(page, size, sort);
 
         Page<Book> searchPageResults = bookDao.findAll(pageRequest);
         return searchPageResults.getContent();
@@ -108,21 +108,23 @@ public class BookController {
 
     /**
      * 4、增
+     *
      * @return
      */
     @PostMapping("/insert")
     public Book insertBook() {
         Book book = new Book();
-        book.setId(System.currentTimeMillis()+"");
-        book.setName("book"+System.currentTimeMillis());
-        book.setMessage("message"+System.currentTimeMillis());
-        book.setType("type"+System.currentTimeMillis());
+        book.setId(System.currentTimeMillis() + "");
+        book.setName("book" + System.currentTimeMillis());
+        book.setMessage("message" + System.currentTimeMillis());
+        book.setType("type" + System.currentTimeMillis());
         bookDao.save(book);
         return book;
     }
 
     /**
      * 5、删 id
+     *
      * @param id
      * @return
      */
@@ -135,12 +137,20 @@ public class BookController {
 
     /**
      * 6、改
+     *
      * @param book
      * @return
      */
     @PostMapping("/update")
     public Book updateBook(Book book) {
         bookDao.save(book);
+        /**
+         * 局部更新
+         */
+        Book bookObj = bookDao.findById("id").get();
+        bookObj.setMessage("123123");
+        bookDao.save(bookObj);
+
         return book;
     }
 
