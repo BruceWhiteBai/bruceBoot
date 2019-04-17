@@ -1,0 +1,22 @@
+1.开启redis以下功能
+config set notify-keyspace-events Egx
+参考地址  https://blog.csdn.net/shuiluobu/article/details/77418896
+
+
+"spring:session:expirations:1521635340000" set类型
+ "spring:session:sessions:7e995929-f063-4779-a382-e831bdb88386" 是hash类型
+
+ "spring:session:sessions:expires:7e995929-f063-4779-a382-e831bdb88386"  string类型 
+
+通过 hkeys  spring:session:sessions:7e995929-f063-4779-a382-e831bdb88386  ,查询所有的fields
+
+
+maxInactiveInterval   session活跃时间（多少秒后过期） ，默认为180s 30min 
+lastAccessedTime  最后一次访问会话的时间 距离1/1/1970 的毫秒
+creationTime  session创建时间距离1/1/1970 的毫秒
+sessionAttr:user  为session中的一个属性，一般是在程序中自定义的
+参考地址: https://blog.csdn.net/niugang0920/article/details/79644842
+
+
+2.单点登录验证
+https://blog.csdn.net/xjj1040249553/article/details/82658889

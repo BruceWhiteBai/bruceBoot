@@ -27,7 +27,7 @@
 14.mail ---√
 15.schedule,定时任务,xxl-job,异步支持---√
 16.docker[docker 镜像制作和持续集成] [swarn,compose,harbor,rancher Kubernetes]
-17.thymeleaf-√
+17.thymeleaf-√ [https://mp.weixin.qq.com/s/AfoSvql8hZ7YuRNgRbgL7A]
 18.fastDfs 与文件上传 -√ [概念和原理相关笔记完善] [linux 集群 和 Nginx集成搭建 ]
 19.shiro  
 20.security
@@ -40,16 +40,16 @@
 27.servlet3 
 28.canal datax
 29.flume [flume dfs hdfs]
-30.storm/jstorm/flink
+30.storm/jstorm/flink 
 31.kong--api网关
 32.yapi接口管理 ---√ 阿里云版搭建完成,官网未完成 todo 
 33.pdf,excel,word,html,xml [文件生成与解析]
 34.mycat,sharding-jdbc,dbsplit分库分表
-35.asm字节码反编译工具
-35.session与分布式session 
+35.asm字节码反编译工具 
+35.session与分布式session ---√ [基于redis的session共享方案]
 36.Nacos 微服务[https://mp.weixin.qq.com/s/l52giRP5UCj1DHPriLecFg]
 37.rpc[dubbo,thrift,grpc,rmi,ice,springcloud] ---√
-37.apollo配置中心 kubernetes docker namespace等知识点综合实战
+37.apollo配置中心 kubernetes docker namespace 等知识点综合实战
 39.Consul eureka zk  [cap] 
 40.flywaydb 数据库版本控制
 ```
@@ -63,6 +63,12 @@
 3.https://www.cnblogs.com/haitao-xie/p/6323423.html
 
 4.https://blog.csdn.net/Angry_Mills/article/details/79446770
+
+5.注解支持 https://blog.csdn.net/rtuujnncc/article/details/68926465
+
+6.嵌套事务
+  https://blog.csdn.net/z69183787/article/details/76212152
+  https://blog.csdn.net/zy_281870667/article/details/77164312
 
 
 >boot 属性加载顺序
