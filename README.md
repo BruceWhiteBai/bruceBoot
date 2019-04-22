@@ -47,11 +47,12 @@
 34.mycat,sharding-jdbc,dbsplit分库分表
 35.asm字节码反编译工具 
 35.session与分布式session ---√ [基于redis的session共享方案]
-36.Nacos 微服务[https://mp.weixin.qq.com/s/l52giRP5UCj1DHPriLecFg]
+36.Nacos 微服务[https://mp.weixin.qq.com/s/l52giRP5UCj1DHPriLecFg] [https://nacos.io/zh-cn/docs/what-is-nacos.html]
 37.rpc[dubbo,thrift,grpc,rmi,ice,springcloud] ---√
 37.apollo配置中心 kubernetes docker namespace 等知识点综合实战
 39.Consul eureka zk  [cap] 
 40.flywaydb 数据库版本控制
+41.jwt认证 [jwt] [mybatis-plus] [pagehelper] [Hikari连接池] 
 ```
 
 >参考地址

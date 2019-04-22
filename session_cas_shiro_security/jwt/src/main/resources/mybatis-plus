@@ -1,0 +1,18 @@
+#0. 集成配置地址     https://blog.csdn.net/qq_32867467/article/details/82944674
+    依赖引入
+    freemark引入
+    代码生成
+    单元测试
+
+
+# 1. MyBatis Plus主键设置策略 https://blog.csdn.net/u010514052/article/details/81775595
+    AUTO 数据库ID自增
+    INPUT 用户输入ID
+    ID_WORKER 全局唯一ID，Long类型的主键
+    ID_WORKER_STR 字符串全局唯一ID
+    UUID 全局唯一ID，UUID类型的主键
+    NONE 该类型为未设置主键类型
+
+
+
+
