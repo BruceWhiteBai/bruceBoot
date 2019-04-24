@@ -3,6 +3,14 @@
     freemark引入
     代码生成
     单元测试
+    分页插件和自定义分页查询
+    逻辑删除[全局配置和注解使用]
+    公共字段填充
+    序列
+    枚举类型
+    全局处理
+    乐观锁
+
 
 
 # 1. MyBatis Plus主键设置策略 https://blog.csdn.net/u010514052/article/details/81775595

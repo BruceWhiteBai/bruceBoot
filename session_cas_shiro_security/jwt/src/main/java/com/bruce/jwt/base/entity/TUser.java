@@ -1,6 +1,7 @@
 package com.bruce.jwt.base.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -24,7 +25,7 @@ public class TUser extends Model<TUser> {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "USER_ID", type = IdType.UUID)
+    @TableId(value = "USER_ID", type = IdType.AUTO)
     private String userId;
 
     @TableField("USERNAME")
@@ -37,6 +38,7 @@ public class TUser extends Model<TUser> {
     private Integer phoneNum;
 
     @TableField("DELETE_FLAG")
+    @TableLogic
     private Integer deleteFlag;
 
 

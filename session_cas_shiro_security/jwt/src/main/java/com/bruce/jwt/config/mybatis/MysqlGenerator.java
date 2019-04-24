@@ -1,4 +1,4 @@
-package com.bruce.jwt.config;
+package com.bruce.jwt.config.mybatis;
 
 
 import com.baomidou.mybatisplus.annotation.DbType;
