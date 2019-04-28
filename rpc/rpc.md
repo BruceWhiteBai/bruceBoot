@@ -8,3 +8,6 @@ http://download.zeroc.com/Ice/3.7/Ice-3.7.1.msi
 
 4.dubbo 注意springboot版本，client和server 对应的接口服务的目录要一致
 
+5 .rpc对比一波
+https://gitee.com/BruceWhite.per.cn/RPC-DEMO
+
