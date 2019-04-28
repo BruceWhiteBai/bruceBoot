@@ -15,7 +15,7 @@
 1.日志-√
 2.redis-√  https://www.jianshu.com/p/7bf5dc61ca06
 3.zk-√
-4.mongo  
+4.mongo -√
 6.mq [rocket,rabbit,kafka,active]-√
 7.elk [filebeat logstash es kibana]-√
 8.cloud[bus,eureka,feign,hystrix,ribbon,sleuth,zuul] -√
@@ -39,7 +39,7 @@
 26.websocket 
 27.servlet3 
 28.canal datax
-29.flume [flume dfs hdfs]
+29.flume [flume]
 30.storm/jstorm/flink 
 31.kong--api网关
 32.yapi接口管理 ---√ 阿里云版搭建完成,官网未完成 todo 
@@ -52,7 +52,7 @@
 37.apollo配置中心 kubernetes docker namespace 等知识点综合实战
 39.Consul eureka zk  [cap] 
 40.flywaydb 数据库版本控制
-41.jwt认证 [jwt] [mybatis-plus] [pagehelper] [Hikari连接池] 
+41.jwt认证 [jwt] [mybatis-plus] [pagehelper] [Hikari连接池] [api] [exception] 
 ```
 
 >参考地址
