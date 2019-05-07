@@ -13,7 +13,7 @@
 >任务列表
 ```
 1.日志-√
-2.redis-√  https://www.jianshu.com/p/7bf5dc61ca06
+2.redis-√  https://www.jianshu.com/p/7bf5dc61ca06 【集群搭建与运维相关】
 3.zk-√
 4.mongo -√
 6.mq [rocket,rabbit,kafka,active]-√
