@@ -1,6 +1,7 @@
 package com.bruce.multipledatasource.dao.mapper;
 
 import com.bruce.multipledatasource.dao.domain.UserLongin;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 
@@ -20,4 +21,7 @@ public interface DataSourceMapper {
     List<UserLongin> selectAllDs2();
 
     List<UserLongin> selectAllDs2a();
+
+    @Insert("insert into user_login ('user_name','pass_word') values (#{userName},#{password})")
+    int insertOne(UserLongin userLongin);
 }

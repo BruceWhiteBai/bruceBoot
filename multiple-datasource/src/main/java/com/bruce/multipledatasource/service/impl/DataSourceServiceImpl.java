@@ -42,4 +42,10 @@ public class DataSourceServiceImpl implements DataSourceService {
         List<UserLongin> list = dataSourceDao.selectAllDs2a();
         return list;
     }
+
+    @Override
+    @TargetDataSource(name = "ds1")
+    public void insertTransaction() {
+
+    }
 }

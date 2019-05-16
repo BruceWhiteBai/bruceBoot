@@ -51,4 +51,11 @@ public class DataSourceController {
         List<UserLongin> list = dataSourceService.selectAllDs2a();
         return list;
     }
+
+    @GetMapping("/ds2ia")
+    public void  insertTransaction() {
+        logger.info("使用ds2数据源a");
+        dataSourceService.insertTransaction();
+        return ;
+    }
 }

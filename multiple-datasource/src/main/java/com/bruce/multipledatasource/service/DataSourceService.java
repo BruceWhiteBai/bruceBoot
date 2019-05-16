@@ -17,4 +17,6 @@ public interface DataSourceService {
 
     @TargetDataSource(name = "ds2")
     List<UserLongin> selectAllDs2a();
+
+    void insertTransaction();
 }
