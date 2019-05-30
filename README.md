@@ -19,7 +19,7 @@
 6.mq [rocket,rabbit,kafka,active]-√
 7.elk [filebeat logstash es kibana]-√
 8.cloud[bus,eureka,feign,hystrix,ribbon,sleuth,zuul] -√
-9.事务与 分布式事务 tcc cap zab，最终一致性,最大努力通知型
+9.事务与 分布式事务 tcc cap zab，最终一致性,最大努力通知型 
 10.guava系列 
 11.多环境---√
 12.自定义参数和随机数---√
@@ -35,10 +35,10 @@
 22.多数据源  [https://github.com/caicahoqi/ChaoqiIsPrivateLibrary] 以及跨数据源的事务
 23.cas/jasig
 24.https [证书购买,安装,重定向] [原理]
-25.netty  
-26.websocket 
+25.netty  ---√
+26.websocket ---√
 27.servlet3 
-28.canal datax
+28.canal datax sqoop
 29.flume [flume]
 30.storm/jstorm/flink 
 31.kong--api网关
@@ -52,7 +52,7 @@
 37.apollo配置中心 kubernetes docker namespace 等知识点综合实战
 39.Consul eureka zk  [cap] 
 40.flywaydb 数据库版本控制
-41.jwt认证 [jwt] [mybatis-plus] [pagehelper] [Hikari连接池] [api] [exception] 
+41.jwt认证 [jwt] [mybatis-plus] [pagehelper] [Hikari连接池] [api] [exception] ---√
 ```
 
 >参考地址

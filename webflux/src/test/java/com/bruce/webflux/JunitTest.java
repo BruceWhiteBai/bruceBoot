@@ -28,4 +28,13 @@ public class JunitTest {
         }
         return true;
     }
+
+
+    @Test
+    public void test(){
+        StringBuilder str = new StringBuilder("asdf,123,fff,");
+        System.out.println(str.length());
+        System.out.println(str.deleteCharAt(str.length()-1));
+        System.out.println(str);
+    }
 }
