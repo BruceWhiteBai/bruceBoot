@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 
 import java.io.Serializable;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 
 @Component
@@ -24,22 +26,21 @@ public class CityDubboConsumerService implements Serializable {
         return city;
     }
 
-    public String futureResult() {
+    public String futureResult() throws ExecutionException, InterruptedException {
         final String[] result = new String[1];
         // 调用直接返回CompletableFuture
         CompletableFuture<String> future = cityDubboService.sayHello("async call request");
         // 增加回调
-        future.whenComplete((v, t) -> {
+        Future<String> f =future.whenComplete((v, t) -> {
             if (t != null) {
                 t.printStackTrace();
             } else {
                 System.out.println("Response: " + v);
-                result[0] = v;
             }
         });
         // 早于结果输出
         System.out.println("Executed before response return.");
-        return  result[0];
+        return  f.get();
     }
 
 }
