@@ -1,7 +1,7 @@
 package com.bruce.dubbo.controller;
 
 
-import com.bruce.dubbo.domain.City;
+import com.bruce.dubbo.dto.City;
 import com.bruce.dubbo.dubbo.CityDubboConsumerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +18,11 @@ public class DubboClientController {
     @RequestMapping("/test")
     public City printMessage3() {
         return cityDubboConsumerService.printCity();
+    }
+
+    @RequestMapping("/testAsync")
+    public String testAsync() {
+        return cityDubboConsumerService.futureResult();
     }
 
 }

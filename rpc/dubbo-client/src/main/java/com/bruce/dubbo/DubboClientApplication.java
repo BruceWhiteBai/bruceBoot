@@ -9,6 +9,10 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class DubboClientApplication {
 
     public static void main(String[] args) {
+        //to solve  error : [xxx is not visible from class loader]
+//        System.setProperty("spring.devtools.restart.enabled", "false");
+        //去掉devtools
+        // IllegalArgumentException: java.lang.ClassCastException: com.bruce.dubbo.dubbo.impl.CityDubboServiceImpl cannot be cast to com.bruce.dubbo.dubbo.impl.CityDubboServiceImpl
 
         ConfigurableApplicationContext run = SpringApplication.run(DubboClientApplication.class, args);
         CityDubboConsumerService cityService = run.getBean(CityDubboConsumerService.class);

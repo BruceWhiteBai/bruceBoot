@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/defaults.xml" />
+	<!--<include resource="org/springframework/boot/logging/logback/file-appender.xml" />-->
+	<include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+	<!--<property name="log.fileName" value="dubbo-client.log" />-->
+	<!--<property name="log.base" value="../logs/dubbo-client" />-->
+	<property name="LOG_FILE"  value="dubbo-client.log" />
+	<!--TODO 方式1 配置路径-->
+	<!--<property name="log.base" value="${LOG_PATH:-.}"/>-->
+	<!--TODO 方式2 -->
+
+	<if condition='isDefined("catalina.home")'>
+		<then>
+			<property name="log.base" value="${catalina.home}/logs/dubbo-client"/>
+		</then>
+		<else>
+			<property name="log.base" value="./logs/dubbo-client"/>
+		</else>
+
+	</if>
+
+
+	<!-- 按照每天生成日志文件 -->
+	<appender name="SYSTEM_FILE"  class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!-- 过滤器，只打印ERROR级别的日志 -->
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!--日志文件输出的文件名-->
+			<FileNamePattern>${log.base}/${LOG_FILE}.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
+			<!--日志文件保留天数-->
+			<MaxHistory>15</MaxHistory>
+			<!--日志文件最大的大小-->
+			<MaxFileSize>100MB</MaxFileSize>
+		</rollingPolicy>
+
+
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+			<pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}][IP:%X{ip}|USER:%X{user}] [%thread] [%-5level] %logger{50} - %msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+
+	<root level="DEBUG">
+		<appender-ref ref="CONSOLE" />
+		<appender-ref ref="SYSTEM_FILE" />
+	</root>
+</configuration>

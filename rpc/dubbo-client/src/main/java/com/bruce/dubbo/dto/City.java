@@ -1,4 +1,4 @@
-package com.bruce.dubbo.domain;
+package com.bruce.dubbo.dto;
 
 import java.io.Serializable;
 

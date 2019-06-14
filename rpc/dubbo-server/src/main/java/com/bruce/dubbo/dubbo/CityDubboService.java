@@ -1,7 +1,9 @@
 package com.bruce.dubbo.dubbo;
 
 
-import com.bruce.dubbo.domain.City;
+import com.bruce.dubbo.dto.City;
+
+import java.util.concurrent.CompletableFuture;
 
 public interface CityDubboService {
 
@@ -10,4 +12,14 @@ public interface CityDubboService {
      * @param cityName
      */
     City findCityByName(String cityName);
+
+    /**
+     * 异步调用
+     * @param name
+     * @return
+     */
+    CompletableFuture<String> sayHello(String name);
+
+
+    String sayHelloAsync(String name);
 }
