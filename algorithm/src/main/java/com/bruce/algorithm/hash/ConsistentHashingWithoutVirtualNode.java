@@ -51,7 +51,7 @@ public class ConsistentHashingWithoutVirtualNode {
         final int p = 16777619;
         int hash = (int) 2166136261L;
         for (int i = 0; i < str.length(); i++)
-            hash = (hash ^ str.charAt(i)) * p;
+            hash = (hash ^ str.charAt(i)) * p;//just loop this line
         hash += hash << 13;
         hash ^= hash >> 7;
         hash += hash << 3;
