@@ -1,7 +1,11 @@
 package com.bruce.webflux;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.junit.Test;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -36,5 +40,16 @@ public class JunitTest {
         System.out.println(str.length());
         System.out.println(str.deleteCharAt(str.length()-1));
         System.out.println(str);
+    }
+
+    @Test
+    public void test1(){
+        try {
+            Document doc= Jsoup.parse(new URL("http://172.16.100.203:7067/sv/rest/protocol/query/protocolHtml?param=F514A02BE5A15752DA42C55A207E45C314E11EF8455D50F3E574CBC4C4955198"),(1000_00));
+            System.out.println(doc.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }

@@ -7,6 +7,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import javax.mail.internet.MimeMessage;
 import java.io.File;
@@ -30,7 +31,7 @@ public class JavaMail {
      * @author:BruceWhite
      * @createTime:2018/11/24
      */
-    public void sendMail(String to, String subject, String content) {
+    public void sendMail(String to, String subject, String content, String[] cc, String []bcc) {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setFrom(form);
         mailMessage.setTo(to);
@@ -38,6 +39,12 @@ public class JavaMail {
         //mailMessage.setTo("1xx.com","2xx.com","3xx.com");    
         mailMessage.setSubject(subject);
         mailMessage.setText(content);
+        if ( !StringUtils.isEmpty(cc) ) {
+            mailMessage.setCc();
+        }
+        if ( !StringUtils.isEmpty(bcc) ) {
+            mailMessage.setBcc(bcc);
+        }
         try {
             javaMailSender.send(mailMessage);
             System.out.println("发送简单邮件");
@@ -56,6 +63,7 @@ public class JavaMail {
             helper.setTo(to);
             helper.setSubject(subject);
             helper.setText(content, true);
+
             javaMailSender.send(message);
             System.out.println("html格式邮件发送成功");
         } catch (Exception e) {

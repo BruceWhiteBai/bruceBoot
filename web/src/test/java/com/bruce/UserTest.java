@@ -23,7 +23,7 @@ public class UserTest extends WebApplicationTests {
 
     @Test
     public void testMail(){
-        javaMail.sendMail("1258444549@qq.com","哈喽","this mail from boot");
+        javaMail.sendMail("1258444549@qq.com","哈喽","this mail from boot" , new String[]{"1602094132@qq.com"}, new String[]{"bcc"});
 
     }
 
