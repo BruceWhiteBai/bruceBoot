@@ -31,7 +31,7 @@ public class JavaMail {
      * @author:BruceWhite
      * @createTime:2018/11/24
      */
-    public void sendMail(String to, String subject, String content, String[] cc, String []bcc) {
+    public void sendMail(String to, String subject, String content, String[] cc, String[] bcc) {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setFrom(form);
         mailMessage.setTo(to);
@@ -40,7 +40,7 @@ public class JavaMail {
         mailMessage.setSubject(subject);
         mailMessage.setText(content);
         if ( !StringUtils.isEmpty(cc) ) {
-            mailMessage.setCc();
+            mailMessage.setCc(cc);
         }
         if ( !StringUtils.isEmpty(bcc) ) {
             mailMessage.setBcc(bcc);
@@ -49,12 +49,13 @@ public class JavaMail {
             javaMailSender.send(mailMessage);
             System.out.println("发送简单邮件");
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println("发送简单邮件失败");
         }
     }
 
 
-    public void sendHtmlMail(String to, String subject, String content) {
+    public void sendHtmlMail(String to, String subject, String content, String[] cc, String[] bcc) {
         MimeMessage message = javaMailSender.createMimeMessage();
         try {
             //true表示需要创建一个multipart message
@@ -63,7 +64,12 @@ public class JavaMail {
             helper.setTo(to);
             helper.setSubject(subject);
             helper.setText(content, true);
-
+            if ( !StringUtils.isEmpty(cc) ) {
+                helper.setCc(cc);
+            }
+            if ( !StringUtils.isEmpty(bcc) ) {
+                helper.setBcc(bcc);
+            }
             javaMailSender.send(message);
             System.out.println("html格式邮件发送成功");
         } catch (Exception e) {
@@ -71,7 +77,7 @@ public class JavaMail {
         }
     }
 
-    public void sendAttachmentsMail(String to, String subject, String content, String[] filePath) {
+    public void sendAttachmentsMail(String to, String subject, String content, String[] filePath, String[] cc, String[] bcc) {
         MimeMessage message = javaMailSender.createMimeMessage();
         try {
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
@@ -79,6 +85,12 @@ public class JavaMail {
             helper.setTo(to);
             helper.setSubject(subject);
             helper.setText(content, true);
+            if ( !StringUtils.isEmpty(cc) ) {
+                helper.setCc(cc);
+            }
+            if ( !StringUtils.isEmpty(bcc) ) {
+                helper.setBcc(bcc);
+            }
             if (filePath.length > 0) {
                 for (int i=0;i<filePath.length;i++){
                     FileSystemResource file=new FileSystemResource(new File(filePath[i]));
