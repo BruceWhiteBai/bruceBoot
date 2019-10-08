@@ -89,13 +89,14 @@ public class ProducerController {
             String json = JSON.toJSONString(user);
             Message msg = new Message("user-topic", "white", json.getBytes());
             try{
-                defaultProducer.send(msg, new MessageQueueSelector() {
+                SendResult sendResult = defaultProducer.send(msg, new MessageQueueSelector() {
                     @Override
                     public MessageQueue select(List<MessageQueue> mqs, Message msg, Object arg) {
                         int index = ((Integer) arg) % mqs.size();
                         return mqs.get(index);
                     }
-                },i);
+                }, i);
+                System.out.println("消息id:"+sendResult.getMsgId()+":"+","+"发送状态:"+sendResult.getSendStatus());
             }
             catch (Exception e){
                 e.printStackTrace();
