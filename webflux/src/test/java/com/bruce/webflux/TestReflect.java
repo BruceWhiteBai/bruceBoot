@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
 public class TestReflect {
 
     public static void target(int i) {
-        //new Exception("#" + i).printStackTrace();
+        new Exception("#" + i).printStackTrace();
     }
 
     @Test
